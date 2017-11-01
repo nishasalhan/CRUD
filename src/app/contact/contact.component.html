@@ -1,0 +1,44 @@
+<h2>{{title}}</h2>
+
+<form #myForm="ngForm" (ngSubmit) = "submitForm(myForm)">
+    <div class="fields-container">
+      <mat-form-field>
+        <input name="name"
+               matInput
+               required
+               #name
+               placeholder="Name">
+      </mat-form-field>
+    </div>
+
+    <div class="fields-container">
+      <mat-form-field>
+        <input name="email"
+               matInput
+               required
+               #email
+               placeholder="Email">
+      </mat-form-field>
+    </div>
+
+    <div class="fields-container">
+      <mat-form-field class="example-full-width">
+        <input  name="message"
+                matInput
+                maxlength="256"
+                required
+                #message
+                placeholder="Message">
+        <mat-hint align="start"><strong>Don't disclose personal info</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+    </div>
+    <br>
+    <br>
+    <button mat-raised-button color="primary" mat-button>Submit!</button>
+</form>
+<br>
+<br>
+<ngui-map center="Mohali, Phase 11">
+  <marker position="Mohali, Phase 11" title="BL Info Soft"></marker>
+</ngui-map>

@@ -1,0 +1,120 @@
+<h2>{{title}}</h2>
+<div><br>
+  <label>first name: </label>{{test.name}}<br>
+  <label>last name: </label>{{test.test}}<br>
+</div><br><br>
+<div>
+  <label>first name: </label>
+  <input [(ngModel)]="test.name" placeholder="name">
+  <br>
+  <label>last name: </label>
+  <input [(ngModel)]="test.test" placeholder="name">
+</div>
+<br>
+<button  mat-raised-button color="accent" mat-button (click)="funClickMe(nisha.name,nisha.address)">click me!</button>
+<br>
+<br>
+{{loc}}
+<br>
+****************************
+
+<br><br>
+
+<mat-form-field>
+  <input matInput value="{{nisha.name}}" placeholder="Full Name" #fullname>
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput value="{{nisha.activity}}" placeholder="Activity" #activity>
+</mat-form-field>
+
+<button mat-raised-button color="primary" mat-button (click)="openSnackBar('This fie is req', 'close')">Show snack-bar</button>
+
+<br> <br>
+
+****************************
+
+<br><br>
+
+<form class="example-form">
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Address" value="{{nisha.address}}">
+  </mat-form-field>
+</form>
+
+<br> <br>
+
+****************************
+
+<br><br>
+
+
+<button *ngIf="showJsonBtn" mat-raised-button color="warn" mat-button (click)="funShowJson()">Show Json Data</button><br><br>
+<div *ngIf="showJson">
+  {{nisha|json}}
+  <button mat-raised-button color="default" mat-button (click)="funHideJson()">Hide me please</button><br><br>
+</div>
+
+<br> <br>
+
+****************************
+
+<br><br>
+<h4>get input value on input change</h4>
+<input #box1 (keyup)="0">
+<p>{{box1.value}}</p>
+
+<br> <br>
+
+****************************
+
+<br><br>
+
+<h4>get input value on enter</h4>
+<input #box (keyup.enter)="onEnter(box.value)">
+<p>{{value}}</p>
+
+<br> <br>
+
+****************************
+
+<br><br>
+
+<input #newHero
+       (keyup.enter)="addHero(newHero.value)"
+       (blur)="addHero(newHero.value); newHero.value='' ">
+
+<button (click)="addHero(newHero.value)">Add</button>
+
+<ul><li *ngFor="let hero of heroes">{{hero}}</li></ul>
+
+<br> <br>
+
+****************************
+
+<br><br>
+
+<input #newEmployee
+       (keyup.enter)="addEmployee(newEmployee.value)"
+       (blur)="addEmployee(newEmployee.value); newEmployee.value=''">
+
+<button (click)="addEmployee(newEmployee.value)">Add New User To List</button>
+
+<table class="table" *ngIf="employees">
+  <thead>
+  <tr>
+    <th>Firstname</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let employee of employees">
+    <td>{{employee}}</td>
+  </tr>
+  </tbody>
+</table>
+
+<br> <br>
+
+****************************
+
+<br><br>
